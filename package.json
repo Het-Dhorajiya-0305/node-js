@@ -2,13 +2,18 @@
   "name": "node_js",
   "version": "1.0.0",
   "main": "hello.js",
+  "type": "module",
   "scripts": {
-    "start": " node hello.js"
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "express": "^5.2.1",
     "url": "^0.11.4"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6"
   }
 }
