@@ -1,16 +1,12 @@
-FROM ubuntu
-
-RUN apt-get update && apt-get install -y curl
-
-# Install Node.js (includes npm)
-RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - \
-    && apt-get install -y nodejs
+FROM node:22-alpine
 
 WORKDIR /app
 
-COPY package.json package-lock.json ./
+COPY package*.json ./
 RUN npm install
 
-COPY server.js ./
+COPY . .
 
-CMD ["node", "server.js"]
+EXPOSE 8000
+
+CMD ["node", "server"]
